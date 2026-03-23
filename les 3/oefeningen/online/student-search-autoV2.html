@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        #students {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>student start</h1>
+        <input type="search" class="form-control" placeholder="Zoeken..." id="searchbar">
+        <div id="students"></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        const students = [
+            { naam: "Alice", leeftijd: 19, afstudeerrichting: "Wiskunde" },
+            { naam: "Maarten", leeftijd: 29, afstudeerrichting: "Boekhouden" },
+            { naam: "Bart", leeftijd: 25, afstudeerrichting: "Nederlands" },
+            { naam: "Balthazar", leeftijd: 52, afstudeerrichting: "Nederlands" },
+            { naam: "Hugo", leeftijd: 37, afstudeerrichting: "Nederlands" },
+            { naam: "Hannelore", leeftijd: 25, afstudeerrichting: "Nederlands" },
+        ];
+
+        const studentsContainer = document.querySelector("#students");
+        const searchBar = document.getElementById('searchbar')
+
+        searchBar.addEventListener('input', searchStudents)
+
+        function searchStudents() {
+            const query = searchBar.value.toLowerCase()
+            const filteredStudents = students.filter(student => student.naam.toLowerCase().includes(query) || student.afstudeerrichting.toLowerCase().includes(query))
+            studentsContainer.innerHTML = ""
+            filteredStudents.forEach((stud) => {
+                let card = createCard(stud)
+                studentsContainer.appendChild(card);
+            });
+        }
+
+        function showStudents() {
+            students.forEach((stud) => {
+                let card = createCard(stud)
+                studentsContainer.appendChild(card);
+            });
+        }
+
+        function createCard(student) {
+            const card = document.createElement("div");
+            card.className = "card m-2";
+            card.style.width = "18rem";
+
+            const cardBody = document.createElement("div");
+            cardBody.className = "card-body";
+
+            const cardTitle = document.createElement("h5");
+            cardTitle.className = "card-text";
+            cardTitle.textContent = student.naam;
+
+            const cardText = document.createElement("p");
+            cardText.className = "card-text";
+            cardText.textContent = `Leeftijd: ${student.leeftijd}, Afstudeerrichting: ${student.afstudeerrichting}`;
+
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(cardText);
+            card.appendChild(cardBody);
+            return card
+        }
+        showStudents()
+    </script>
+</body>
+
+</html>

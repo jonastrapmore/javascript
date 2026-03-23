@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <style>
+        #students {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+ 
+<body>
+    <main class="container">
+        <button class="btn btn-primary mt-2 start-app">Start app</button>
+        <div id="students"></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        const students = [
+            { name: 'Alice', age: 20, major: 'Computer Science' },
+            { name: 'Bob', age: 22, major: 'Mathematics' },
+            { name: 'Charlie', age: 21, major: 'Physics' },
+            { name: 'David', age: 23, major: 'Biology' },
+            { name: 'Eve', age: 19, major: 'Chemistry' },
+            { name: 'Frank', age: 24, major: 'History' },
+            { name: 'Grace', age: 20, major: 'Literature' },
+            { name: 'Heidi', age: 22, major: 'Philosophy' },
+            { name: 'Ivan', age: 21, major: 'Economics' },
+            { name: 'Judy', age: 23, major: 'Political Science' }
+        ];
+ 
+        const studentsContainer = document.getElementById('students');
+        const startAppButton = document.querySelector('.start-app');
+ 
+        startAppButton.addEventListener('click', showStudents);
+ 
+        function showStudents() {
+            students.forEach(student => {
+                const card = document.createElement('div');
+                card.className = 'card m-2';
+                card.style.width = '18rem';
+ 
+                const cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+ 
+                const cardTitle = document.createElement('h5');
+                cardTitle.className = 'card-title';
+                cardTitle.textContent = student.name;
+ 
+                const cardText = document.createElement('p');
+                cardText.className = 'card-text';
+                cardText.textContent = `Age: ${student.age}, Major: ${student.major}`;
+ 
+                cardBody.appendChild(cardTitle);
+                cardBody.appendChild(cardText);
+                card.appendChild(cardBody);
+                studentsContainer.appendChild(card);
+            });
+ 
+            startAppButton.hidden = true;
+        }
+    </script>
+</body>
+ 
+</html>

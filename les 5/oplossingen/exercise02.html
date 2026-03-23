@@ -16,10 +16,10 @@
   <div class="container">
     <h1>Star Wars personages</h1>
 
-    <div class="alert alert-danger d-none" role="alert" id="error-message">
+    <div class="alert alert-danger d-none" role="alert" id="errorMessage">
     </div>
 
-    <ul class="list-group sw-list">
+    <ul class="list-group" id="sw-list">
       <!--<li class="list-group-item">An item</li>-->
     </ul>
   </div>
@@ -32,23 +32,29 @@
     async function getStarWars() {
       try {
         const response = await fetch('https://swapi.dev/api/people/')
-        const personages = await response.json()
+        const data = await response.json()
+        console.log(data)
 
-        const starWarsList = document.querySelector('.sw-list')
-
-        personages.results.forEach(personage => {
-          const listItem = document.createElement('li')
-          listItem.className = 'list-group-item'
-          listItem.textContent = `${personage.name} ${personage.gender === 'n/a' ? '' : '(' + personage.gender + ')'}`
-          starWarsList.append(listItem)
-        });
+        data.results.forEach(char => addCharacterToList(char));
 
       } catch (error) {
-        const errorMessage = document.getElementById('error-message')
+        const errorMessage = document.getElementById('errorMessage')
         errorMessage.classList.remove('d-none')
-        errorMessage.textContent = 'er is iets misgelopen'
+        errorMessage.textContent = 'er is iets misgelopen'        
       }
     }
+
+    const list = document.getElementById('sw-list')
+
+    function addCharacterToList(character) {
+      const listItem = document.createElement('li')
+      listItem.classList.add('list-group-item')
+      listItem.textContent = `${character.name}${character.gender === 'n/a' ? '' : ' (' + character.gender + ')'}`
+
+
+      list.appendChild(listItem)
+    }
+
     getStarWars()
   </script>
 
