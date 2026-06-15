@@ -1,0 +1,15 @@
+<!--
+  VRAAG "Routing (1 punt)": de navigatiebalk.
+  De router maakt van elk element met een data-link attribuut een werkende link
+  (zie router.ts -> #setupRouter). Het data-link attribuut bevat het pad waarnaar
+  genavigeerd wordt zonder dat de pagina volledig herlaadt (single page application).
+  De enige toevoeging t.o.v. de startcode is de "Quizzes TEST"-link naar de testpagina.
+-->
+<div class="d-flex justify-content-between m-2 border-bottom">
+  <h6>Voorbeeldexamen JavaScript</h6>
+  <div class="d-flex align-items-center gap-2">
+    <a href="/" data-link="/">Quiz builder</a>
+    <a href="/quizzes" data-link="/quizzes">Quizzes</a>
+    <a href="/quizzes-test" data-link="/quizzes-test">Quizzes TEST</a>
+  </div>
+</div>
