@@ -23,15 +23,9 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Cart (<span id="cart-counter">0</span>)
             </a>
-            <div class="dropdown-menu p-0 overflow-hidden" id="cart-dropdown" style="min-width: 22rem;">
-              <ul class="list-unstyled mb-0" id="menu">
-                <li><span class="dropdown-item-text">No products found</span></li>
-              </ul>
-              <div class="border-top px-3 py-2 d-flex justify-content-between align-items-center gap-2">
-                <span class="small">Total: <strong id="cart-total">€0</strong></span>
-                <button type="button" class="btn btn-sm btn-success" id="checkout-btn" disabled>Checkout</button>
-              </div>
-            </div>
+            <ul class="dropdown-menu" id="shopcart">
+              <li><a class="dropdown-item" href="#">No products found</a></li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -40,17 +34,33 @@
   <main class="container">
     <h1 class="mt-3">Webshop</h1>
     <p>Welcome to our new shop!</p>
-    <div class="alert alert-danger d-none" role="alert" id="errorMessage"></div>
+    <div class="alert alert-danger" role="alert" id="error" hidden>
+      Error while loading products
+    </div>
     <div class="d-flex flex-wrap gap-2 mb-3 d-none" id="filter-buttons">
-      <!-- <button class="btn btn-dark rounded-pill filter-btn" data-category="all"> 
+      <button class="btn btn-dark rounded-pill filter-btn" data-category="all">
         All&nbsp;products
-      </button> -->
-      <!--<button class="btn btn-dark rounded-pill filter-btn" data-category="Shirts">
+      </button>
+      <button class="btn btn-dark rounded-pill filter-btn" data-category="Shirts">
         Shirts
-      </button>-->
+      </button>
     </div>
     <section class="products">
-      <div id="product-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"></div>
+      <div id="product-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+        <!-- 
+             <div class="col">
+                <div class="card mb-3">
+                    <img src="avatars/emma-johnson.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                        <button class="btn btn-danger">Remove</button>
+                    </div>
+                </div>
+            </div>
+            -->
+      </div>
     </section>
   </main>
   <script src="app.js"></script>

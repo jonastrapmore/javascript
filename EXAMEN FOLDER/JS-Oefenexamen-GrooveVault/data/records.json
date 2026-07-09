@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Neon Mirage",
+    "artist": "The Midnight Drivers",
+    "genre": "Synthwave",
+    "year": 1984,
+    "displayStatus": "In Stock",
+    "imageUrl": "https://picsum.photos/seed/groove1/300/300",
+    "description": "Pulserende synths en zonsondergang-vibes, het ultieme album voor een nachtelijke rit."
+  },
+  {
+    "id": 2,
+    "name": "Velvet Thunder",
+    "artist": "Iron Lotus",
+    "genre": "Rock",
+    "year": 1973,
+    "displayStatus": "Last Copy",
+    "imageUrl": "https://picsum.photos/seed/groove2/300/300",
+    "description": "Rauwe gitaren en stevige drums, een klassieker uit het gouden tijdperk van de rock."
+  },
+  {
+    "id": 3,
+    "name": "Midnight Cassette",
+    "artist": "Aurora Vlux",
+    "genre": "Synthpop",
+    "year": 1986,
+    "displayStatus": "In Stock",
+    "imageUrl": "https://picsum.photos/seed/groove3/300/300",
+    "description": "Dromerige vocalen over glinsterende drum machines en analoge warmte."
+  },
+  {
+    "id": 4,
+    "name": "Golden Hour",
+    "artist": "The Blue Room Quartet",
+    "genre": "Jazz",
+    "year": 1965,
+    "displayStatus": "Sold Out",
+    "imageUrl": "https://picsum.photos/seed/groove4/300/300",
+    "description": "Smooth jazz-standards opgenomen in één enkele nachtsessie in New Orleans."
+  },
+  {
+    "id": 5,
+    "name": "Concrete Jungle",
+    "artist": "MC Granite",
+    "genre": "Hip-Hop",
+    "year": 1994,
+    "displayStatus": "In Stock",
+    "imageUrl": "https://picsum.photos/seed/groove5/300/300",
+    "description": "Scherpe lyrics en zware boom-bap beats recht uit de straten van de stad."
+  },
+  {
+    "id": 6,
+    "name": "Solar Flares",
+    "artist": "The Discotheque Kings",
+    "genre": "Disco",
+    "year": 1978,
+    "displayStatus": "In Stock",
+    "imageUrl": "https://picsum.photos/seed/groove6/300/300",
+    "description": "Funky baslijnen en een spiegelbol vol energie, gemaakt voor de dansvloer."
+  },
+  {
+    "id": 7,
+    "name": "Whispering Pines",
+    "artist": "Hollow & Hart",
+    "genre": "Folk",
+    "year": 1971,
+    "displayStatus": "Reserved",
+    "imageUrl": "https://picsum.photos/seed/groove7/300/300",
+    "description": "Akoestische gitaren en harmonieën die ruiken naar dennenbos en kampvuur."
+  },
+  {
+    "id": 8,
+    "name": "Bass Reactor",
+    "artist": "Voltage Unit",
+    "genre": "Techno",
+    "year": 2001,
+    "displayStatus": "Pre-Order",
+    "imageUrl": "https://picsum.photos/seed/groove8/300/300",
+    "description": "Hypnotiserende loops en diepe bass die de hele club laten trillen."
+  },
+  {
+    "id": 9,
+    "name": "Sapphire Skies",
+    "artist": "Lena Frost",
+    "genre": "Pop",
+    "year": 1989,
+    "displayStatus": "In Stock",
+    "imageUrl": "https://picsum.photos/seed/groove9/300/300",
+    "description": "Aanstekelijke refreinen en glitterende productie van een pop-icoon."
+  },
+  {
+    "id": 10,
+    "name": "Rust & Rivers",
+    "artist": "Delta Joe Coleman",
+    "genre": "Blues",
+    "year": 1968,
+    "displayStatus": "Last Copy",
+    "imageUrl": "https://picsum.photos/seed/groove10/300/300",
+    "description": "Slide-gitaar en een rauwe stem die het verhaal van de Mississippi vertellen."
+  },
+  {
+    "id": 11,
+    "name": "Quantum Funk",
+    "artist": "The Groove Syndicate",
+    "genre": "Funk",
+    "year": 1976,
+    "displayStatus": "In Stock",
+    "imageUrl": "https://picsum.photos/seed/groove11/300/300",
+    "description": "Strakke blazers en een baslijn die je nekspieren niet kunnen weerstaan."
+  },
+  {
+    "id": 12,
+    "name": "Static Dreams",
+    "artist": "Crimson Echo",
+    "genre": "Shoegaze",
+    "year": 1991,
+    "displayStatus": "Sold Out",
+    "imageUrl": "https://picsum.photos/seed/groove12/300/300",
+    "description": "Muren van galmende gitaren en fluisterzachte vocalen verdronken in reverb."
+  }
+]

@@ -29,6 +29,7 @@ async function getArtefacten() {
     const response = await fetch("https://vaolhgulafwfxgrqpngy.supabase.co/functions/v1/museum")
     artefacten = await response.json()
 }
+
 async function addArt() {
     const responseAdd = await fetch("https://vaolhgulafwfxgrqpngy.supabase.co/functions/v1/museum", { method: 'POST' })
     const addArt = await responseAdd.json()

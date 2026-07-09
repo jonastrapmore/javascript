@@ -1,0 +1,82 @@
+[
+  {
+    "id": 101,
+    "name": "Electric Tundra",
+    "artist": "Polar Signal",
+    "genre": "Ambient",
+    "year": 1997,
+    "displayStatus": "In Stock",
+    "imageUrl": "https://picsum.photos/seed/extra101/300/300",
+    "description": "Trage texturen en ijzige pads die langzaam over je heen schuiven."
+  },
+  {
+    "id": 102,
+    "name": "Crimson Boulevard",
+    "artist": "Nina & The Lamps",
+    "genre": "Soul",
+    "year": 1969,
+    "displayStatus": "Last Copy",
+    "imageUrl": "https://picsum.photos/seed/extra102/300/300",
+    "description": "Warme orgels en een stem vol verlangen, opgenomen op een regenachtige avond."
+  },
+  {
+    "id": 103,
+    "name": "Pixel Horizon",
+    "artist": "Cartridge Club",
+    "genre": "Chiptune",
+    "year": 2008,
+    "displayStatus": "Pre-Order",
+    "imageUrl": "https://picsum.photos/seed/extra103/300/300",
+    "description": "8-bit melodieën die rechtstreeks uit een retro gamekast lijken te komen."
+  },
+  {
+    "id": 104,
+    "name": "Desert Highway",
+    "artist": "Sandstone Riders",
+    "genre": "Country",
+    "year": 1982,
+    "displayStatus": "In Stock",
+    "imageUrl": "https://picsum.photos/seed/extra104/300/300",
+    "description": "Stofdroge gitaren en verhalen over eindeloze wegen onder een brandende zon."
+  },
+  {
+    "id": 105,
+    "name": "Tidal Bloom",
+    "artist": "Coral Frequency",
+    "genre": "Dream Pop",
+    "year": 2014,
+    "displayStatus": "In Stock",
+    "imageUrl": "https://picsum.photos/seed/extra105/300/300",
+    "description": "Zwevende vocalen en glinsterende synths als zonlicht door zeewater."
+  },
+  {
+    "id": 106,
+    "name": "Iron Cathedral",
+    "artist": "Obsidian Choir",
+    "genre": "Metal",
+    "year": 1999,
+    "displayStatus": "Reserved",
+    "imageUrl": "https://picsum.photos/seed/extra106/300/300",
+    "description": "Donderende dubbele bassdrums en gitaren scherp als een kathedraalspits."
+  },
+  {
+    "id": 107,
+    "name": "Paper Lanterns",
+    "artist": "Yuki Mori",
+    "genre": "City Pop",
+    "year": 1983,
+    "displayStatus": "Sold Out",
+    "imageUrl": "https://picsum.photos/seed/extra107/300/300",
+    "description": "Glanzende Japanse city pop boordevol slap-bas en zomerse nostalgie."
+  },
+  {
+    "id": 108,
+    "name": "Gravity Lounge",
+    "artist": "Zero-G Trio",
+    "genre": "Lo-Fi",
+    "year": 2019,
+    "displayStatus": "In Stock",
+    "imageUrl": "https://picsum.photos/seed/extra108/300/300",
+    "description": "Knisperende beats en jazzy akkoorden, perfect om bij te studeren of te chillen."
+  }
+]

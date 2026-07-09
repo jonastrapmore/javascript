@@ -16,7 +16,7 @@ async function getProducts() {
         products = await response.json()
 
         createFilterButtons() //creeren van de filters
-        createPage('all')  //creeren van de pagina vol productcards
+        createPage('all')  //creeren van de pagina vol produccards
 
     } catch (error) {
         const errorMessage = document.getElementById('errorMessage')
@@ -29,40 +29,17 @@ async function getProducts() {
 //functie voor het creeren van de filters
 function createFilterButtons() {
     filterBtns.classList.remove('d-none')
-    filterBtns.innerHTML = ''
 
-    //knop all products creeren
-    const buttonAll = document.createElement('button')
-    buttonAll.className = 'btn btn-dark rounded-pill filter-btn'
-    buttonAll.dataset.category = 'all'
-    buttonAll.textContent = 'All products'
-
-    buttonAll.addEventListener('click', function(){
-        if (!products) return
-        createPage(this.dataset.category)
-    })
-
-    filterBtns.appendChild(buttonAll)
-
-    //alle andere category's creeren
     const allCat = [...new Set(products.products.map(product => product.category))]
 
     allCat.forEach(cat => {
-        const button = document.createElement('button')
+        let button = document.createElement('button')
         button.className = 'btn btn-dark rounded-pill filter-btn'
         button.dataset.category = cat
         button.textContent = cat
-
-        //listener openen op de button
-        button.addEventListener('click', function () {
-            if (!products) return
-
-            const gekozenCategorie = this.dataset.category
-            createPage(gekozenCategorie)
-        })
-
         filterBtns.appendChild(button)
     });
+    // filterListener() //als de andere listener gebruikt wordt moet deze uit commentaar
 }
 
 //functie voor het creeren van de juiste producten aan de hand van de filter die mee gegeven wordt
@@ -91,7 +68,6 @@ function createCard(product) {
     const cardImg = document.createElement('img')
     cardImg.className = 'card-img-top'
     cardImg.src = product.image
-    cardImg.alt = product.name
 
     const cardBody = document.createElement('div')
     cardBody.className = 'card-body'
@@ -101,7 +77,7 @@ function createCard(product) {
     cardTitle.textContent = product.name
 
     const cardTitleBadge = document.createElement('span')
-    cardTitleBadge.className = 'badge text-bg-secondary mx-2'
+    cardTitleBadge.className = 'badge text-bg-secondary'
     cardTitleBadge.textContent = `€${product.price}`
 
     const cardText = document.createElement('p')
@@ -112,11 +88,6 @@ function createCard(product) {
     cardBtn.className = 'btn btn-dark rounded-pill addToCart'
     cardBtn.textContent = 'Add to cart'
     cardBtn.dataset.productId = product.id
-
-    cardBtn.addEventListener('click', function () {
-        if (!products) return
-        addProductToCart(Number(this.dataset.productId))
-    })
 
     cardTitle.appendChild(cardTitleBadge)
     cardBody.appendChild(cardTitle)
@@ -129,14 +100,39 @@ function createCard(product) {
     return col
 }
 
+//luisteren op welke knop er gedrukt wordt van de filter/ en de pagina opnieuw laten opmaken
+filterBtns.addEventListener('click', (event) => {
+    if (!products) return
+
+    const button = event.target.closest('.filter-btn')
+    if (!button) return
+
+    const gekozenCategorie = button.dataset.category
+    createPage(gekozenCategorie)
+})
+
+// function filterListener() {
+//     document.querySelectorAll('.filter-btn').forEach(function (button) {
+//         button.addEventListener("click", function () {
+//             if (!products) return
+
+//             const gekozenCategorie = this.dataset.category
+//             createPage(gekozenCategorie)
+//         })
+//     })
+// }
+
 //luisteren op welke knop er gedrukt wordt om in winkelwagen toe te voegen
-function addProductToCart(productId) {
+productList.addEventListener('click', (event) => {
+    const addBtn = event.target.closest('.addToCart')
+    if (!addBtn) return
+
+    const productId = Number(addBtn.dataset.productId)
     const product = products.products.find(p => p.id === productId)
     if (!product) return
-
     cart.push(product)
     cartDropDown()
-}
+})
 
 //winkelwagen vullen
 function cartDropDown() {
@@ -198,11 +194,6 @@ function cartDropDown() {
         btnDelete.dataset.productId = item.id
         btnDelete.textContent = `Verwijderen`
 
-        btnDelete.addEventListener('click', function () {
-            if (!products) return
-            removeProductFromCart(Number(this.dataset.productId))
-        })
-
         row.appendChild(info)
         row.appendChild(btnDelete)
         listItem.appendChild(row)
@@ -216,13 +207,17 @@ function cartDropDown() {
 }
 
 //verwijder knoppen luisteren. 
-function removeProductFromCart(productId) {
+menu.addEventListener('click', (event) => {
+    const deleteBtn = event.target.closest('.remove-from-cart')
+    if (!deleteBtn) return
+
+    const productId = Number(deleteBtn.dataset.productId)
     const index = cart.findIndex(item => item.id === productId)
     if (index === -1) return
 
     cart.splice(index, 1)
     cartDropDown()
-}
+})
 
 
 //checkout knop luisteren
